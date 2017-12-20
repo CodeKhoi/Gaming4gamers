@@ -71,6 +71,7 @@ var rankingLists = {
                 var videoDiv = $('<div>');
                 var videoLink = $('<iframe>');
                 var videoExt = "";
+                var videoSummary = "";
 
                 //adds 0 to front of date for formating purposes
                 if (day < 10) {
@@ -115,8 +116,12 @@ var rankingLists = {
 	                videoLink.attr('width', '720px');
 	                videoLink.attr('height', '400px');
 	                videoLink.attr('src', 'https://www.youtube.com/embed/'+ videoExt);
+                    videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
+                                + "Summary: " + data[i].summary; 
 
 	                videoDiv.append(videoLink);
+                    videoDiv.append(videoSummary);
+                    console.log(data[i].summary);
 
 	                $('#carousel').prepend(videoDiv);
 

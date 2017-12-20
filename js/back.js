@@ -42,7 +42,7 @@ app.get('/', function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     client.games({
-        fields: ['name', 'total_rating', 'aggregated_rating', 'first_release_date', 
+        fields: ['summary', 'storyline', 'name', 'total_rating', 'aggregated_rating', 'first_release_date', 
         'release_dates.date', 'videos.video_id', 'genres', 'platforms.name', 'platforms.slug'], // Return all fields
         limit: 10, // Limit to 5 results
         offset: 15, // Index offset for results
