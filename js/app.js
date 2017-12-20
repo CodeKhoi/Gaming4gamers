@@ -10,7 +10,6 @@ $('#submit').on('click', function(event) {
     $('#gameStats').hide();
     $('#tableStats').hide();
     $('#contentHeader').empty();
-    $('#contentHeader').html("<h1>Search Results</h1>");
 	$('#searchContent').empty(); //clear div of old content.
 	$('#searchPanel').show();
 	$('#searchContent').show();
