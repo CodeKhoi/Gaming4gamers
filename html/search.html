@@ -1,93 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial scale=1.0">
-	<title>Gaming for Gamers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial scale=1.0">
+  <title>Gaming for Gamers</title>
   <!-- Bootstrap CDN -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">  
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
 
 <!-- ================NAVBAR================= -->
 
 <nav class="navbar navbar-default">
-<div class="container">
+<div class="container-fluid">
   <!-- Brand and toggle get grouped into hamburger for better mobile display -->
   <div class="navbar-header">
-    <form class="navbar-form navbar-left">
-        <div class="form-group">
-        <input type="text" class="form-control" id="userInput" placeholder="Search">
-        <input type='submit' class="btn btn-default" id="submit" value='Submit' href='search.html'>
-      </form>
-      <a class='navbar-brand' href='index.html'><span class='logoFont'>Gaming<img id="logo" alt="logo" src="../img/logo.png"/>Gamers</span></a>
+    <!-- navbar logo --> 
+    <a class='navbar-brand' href='index.html'><span class='logoFont'>Gaming<img id="logo" alt="logo" src="../img/logo.png"/>Gamers</span></a>
+
   </div> <!-- navbar-header -->
 
-<!-- Collect the nav links, forms, and other content for toggling -->
-
-
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right" id="signInTab">
     <li><a href="Login.html">LOG OUT</a></li>
     </li>
   </ul>
 
-</div><!-- /.navbar-collapse -->
+  <form class="navbar-form navbar-right">
+    <input type="text" class="form-control" id="userInput" placeholder="Search">
+    <input type='submit' class="btn btn-default" id="submit" value='Submit'>
+  </form>
+
 </div><!-- /.container-->
 </nav>
 
 <!-- ====================END OF NAVBAR=============== -->
+
 <div class="wrapper">
 
-<div class="container-fliud">
-  <div class="row" id="rowOne">
-</div>
+<div class="row" id="rowOne"></div>
 
 <div class="container">
-  <div class="row" id="rowTwo">
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-      <!-- If the API has this data, we will dynamically append it here. If not, I can hard code it later. -->
-      <div id="contentHeader"> <h1>Search Results </h1></div>
-        <div id="headerDescription">
-        
-        </div> <!-- header description -->
-    </div> <!-- col -->
-
-
-<!-- <div class="container">
-  <div class="row" id="rowFive">
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">TBD</h3>
-        </div>  -->
-        <!-- panel-heading -->
-<!--         <div class="panel-body">
-          <form class="form-inline" onsubmit="return false">
-          <input type="text" class="form-control" id="userInput" placeholder="Search">
-          <button type="button" class="btn btn-default" id="submit">Submit</button>
-
-          </form>
-        </div>  -->
-        <!-- panel-body -->
-      <!-- </div>  -->
-      <!-- panel -->
-    <!-- </div>  -->
-    <!-- col -->
-  <!-- </div>  -->
-  <!-- row -->
-<!-- </div>  -->
-<!-- container -->
-
-
-<div class="container">
-  <div class="row" id="rowSix">
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-      <div class="well well-lg" id="searchContent"></div>
-    </div> <!-- col -->
-  </div> <!-- row -->
+  <div class="panel panel-default" id="searchPanel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search Results</h3>
+  </div>
+  <div class="panel-body" id="searchContent">
+  </div>
+  </div>
 </div> <!-- container -->
 
 <div class="footer">

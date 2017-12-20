@@ -47,10 +47,27 @@ ul li a{
 	margin: 0;
 	background-color: #76323F;
 	border: 1px solid #76323F;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#rowOne {
+	background: url(../img/back.jpg);
+	height: 300px;
+	width: 100%;
+	margin: 0;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#rowTwo {
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 #tableStats {
 	margin-top: 70px;
+	border: 2px solid #565656!important;
+
 }
 
 #gameStats {
@@ -61,14 +78,6 @@ ul li a{
 #userInput {
 	width: 200px;
 	margin-top: 5px;
-}
-
-#rowOne {
-	background: url(../img/back.jpg);
-	height: 300px;
-	width: 100%;
-	margin: 0;
-	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .panel-heading {
@@ -90,6 +99,10 @@ ul li a{
 
 .panel-body {
 	border: 2px solid #565656!important;
+}
+
+#searchPanel {
+	margin-top: 50px;
 }
 
 #searchContent {
@@ -125,15 +138,16 @@ h3 {
 	color: #fff!important;
 }
 
-p {font-family: 'Questrial', sans-serif;;}
+p {font-family: 'Questrial', sans-serif;}
 
-td {font-family: 'Questrial', sans-serif;;}
+td {
+	font-family: 'Questrial', sans-serif;
+	border-bottom: 2px solid #565656!important;
+
+}
 
 th {
 	background-color: #76323F;
 	color: #D7CEC7;
 }
 
-.table-bordered {
-	border: 2px solid #565656;
-}

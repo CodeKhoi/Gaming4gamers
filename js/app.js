@@ -26,9 +26,9 @@ $('#submit').on('click', function(event) {
                     var searchReturn = $('<p>');
                     //genre, aggregated rating, preview, name
                     searchReturn.html('Title: ' + data[i].name + '<br/>' +
-                                      'Genre: ' + data[i].genres + '<br/>' +
-                    				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' +
-                    				  'Summary: ' + data[i].summary + '<br/>' +
+                                      'Genre: ' + data[i].genres + '<br/>' + 
+                    				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' + '<hr>' +
+                    				  'Summary: ' + data[i].summary + '<br/>' + '<br/>' +
                     				  'More info: ' + data[i].url + '<br/>' + '<hr>');
 
 
