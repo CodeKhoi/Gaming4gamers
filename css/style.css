@@ -50,7 +50,7 @@ ul li a{
 }
 
 #tableStats {
-	margin-top: 25px;
+	margin-top: 70px;
 }
 
 #gameStats {
@@ -128,3 +128,12 @@ h3 {
 p {font-family: 'Questrial', sans-serif;;}
 
 td {font-family: 'Questrial', sans-serif;;}
+
+th {
+	background-color: #76323F;
+	color: #D7CEC7;
+}
+
+.table-bordered {
+	border: 2px solid #565656;
+}
