@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial scale=1.0'>
+	<title>Gaming for Gamers</title>
+  <!-- Bootstrap CDN -->
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+	<link rel='stylesheet' type='text/css' href='../css/style.css'>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+<body>
+
+<nav class='navbar navbar-default'>
+  <div class='container'>
+    <!-- Brand and toggle get grouped into hamburger for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='index.html'><span class='logoFont'>Gaming<img id="logo" alt="logo" src="../img/logo.png"/>Gamers</span></a>
+    </div> <!-- navbar-header -->
+
+    <div class='nav navbar-nav navbar-right'>
+      <button type='button' class='btn btn-default' data-toggle='modal' data-target='#signUp'>SIGN UP</button>
+    </div>
+
+    <div class='modal fade' id='signUp'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h1>SIGN UP</h1>
+          </div> <!-- header -->
+          <div class='modal-body'>
+            <form>
+              <div class='form-group'>
+                <label for='fullName'>Full Name</label>
+                <input type='text' class='form-control' id='signName' placeholder='Full Name'>
+              </div>
+              <div class='form-group'>
+                <label for='signUpEmail'>Email address</label>
+                <input type='email' class='form-control' id='signUpEmailAddress' placeholder='Email'>
+              </div>
+              <div class='form-group'>
+                <label for='username'>Username</label>
+                <input type='text' class='form-control' id='username' placeholder='Username'>
+              </div>
+              <div class='form-group'>
+                <label for='signUpPassword'>Password</label>
+                <input type='password' class='form-control' id='signUpPassword' placeholder='Password'>
+              </div>
+              <div class='form-group'>
+                <label for='confirmPassword'>Confirm Password</label>
+                <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm Password'>
+              </div>
+            </form>
+          </div> <!-- body -->
+          <div class='modal-footer'>
+            <button type='submit' class='btn btn-default' id='signUpSubmit'>Submit</button>
+            <button type='button' class='btn btn-default' data-dismiss='modal' VALUE='Back' onClick="window.location.href='login.html'">Close</button>
+          </div> <!-- footer -->
+        </div> <!-- content -->
+      </div> <!-- dialog -->
+    </div> <!-- fade -->
+
+    <div class='nav navbar-nav navbar-right'>
+      <button type='button' class='btn btn-default' data-toggle='modal' data-target='#login'>SIGN IN</button>
+    </div>
+
+    <div class='modal fade' id='login'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h1>SIGN IN</h1>
+          </div> <!-- header -->
+          <div class='modal-body'>
+            <form>
+              <div class='form-group'>
+                <label for='username'>Username</label>
+                <input type='text' class='form-control' id='signInUname' placeholder='Username'>
+              </div>
+              <div class='form-group'>
+                <label for='signInPassword'>Password</label>
+                <input type='password' class='form-control' id='confirmPword' placeholder='Password'>
+              </div>
+            </form>
+          </div> <!-- body -->
+          <div class='modal-footer'>
+            <button type='submit' class='btn btn-default' href='index.html' id="signInSubmit">Submit</button>
+            <button type='button' class='btn btn-default' data-dismiss='modal'>CLOSE</button>
+          </div> <!-- footer -->
+        </div> <!-- content -->
+      </div> <!-- dialog -->
+    </div> <!-- fade -->
+
+  </div><!-- /.container-->
+</nav>
+
+
+<div class='wrapper'>
+
+<div class='container-fliud'>
+  <div class='row' id='rowTop'></div>
+</div>
+
+<div class='container-fliud'>
+  <div class='row' id='rowBottom'></div>
+</div>
+
+</div> <!-- wrapper -->
+
+
+<!-- JQuery CDN -->
+<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+<!-- Bootstrap JS -->
+<script src='../js/bootstrap.min.js'></script>
+<script src='../js/app.js'></script>
+<script src="../js/login.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/uuid.js"></script>
+</body>
+</html>
