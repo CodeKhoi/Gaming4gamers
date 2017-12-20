@@ -26,9 +26,10 @@ $('#submit').on('click', function(event) {
                     var searchReturn = $('<p>');
                     //genre, aggregated rating, preview, name
                     searchReturn.html('Title: ' + data[i].name + '<br/>' +
+                                      'Genre: ' + data[i].genres + '<br/>' +
                     				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' +
                     				  'Summary: ' + data[i].summary + '<br/>' +
-                    				  'More info: ' + "<a href='" + data[i].url + "'></a>" + '<br/>' + '<hr>');
+                    				  'More info: ' + data[i].url + '<br/>' + '<hr>');
 
 
                     searchResult.append(searchReturn);
@@ -91,9 +92,10 @@ var rankingLists = {
                 searchReturn3.html(newDateFormat);
                  // + '<br/>' + 'Rating: ' + data[i].total_rating + '<br/>');
                 				  // '<img src=' + data.i.images.downsized_still.url);
+                
+                searchResult.append(searchReturn2);
                 searchResult.append(searchReturn);
                 searchResult.append(searchReturn4);
-                searchResult.append(searchReturn2);
                 searchResult.append(searchReturn3);
                 
                 $('#ranking').append(searchResult);

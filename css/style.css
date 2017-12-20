@@ -53,18 +53,14 @@ ul li a{
 	margin-top: 25px;
 }
 
-#rowThree {
-	margin-top: 25px;
-}
-
 #gameStats {
 	margin-top: 25px;
 	margin-bottom: 50px;
 }
 
 #userInput {
-	width: 400px;
-	margin-right: 25px;
+	width: 200px;
+	margin-top: 5px;
 }
 
 #rowOne {
@@ -85,6 +81,7 @@ ul li a{
 	border: 1px solid #565656!important;
 	color: #fff;
 	margin: 0;
+	margin-top: 4px;
 }
 
 #userInput {
@@ -128,3 +125,6 @@ h3 {
 	color: #fff!important;
 }
 
+p {font-family: 'Questrial', sans-serif;;}
+
+td {font-family: 'Questrial', sans-serif;;}
