@@ -117,11 +117,11 @@ var rankingLists = {
 	                videoLink.attr('height', '400px');
 	                videoLink.attr('src', 'https://www.youtube.com/embed/'+ videoExt);
                     videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
-                                + "Summary: " + data[i].storyline; 
+                                + "Summary: " + data[i].summary; 
 
 	                videoDiv.append(videoLink);
                     videoDiv.append(videoSummary);
-                    console.log(data[i].storyline);
+                    console.log(data[i].summary);
 
 	                $('#carousel').prepend(videoDiv);
 
