@@ -4,14 +4,14 @@ $(document).ready(function() {
 	rankingLists.ranking2017();	
 
 $('#submit').on('click', function(event) {
+    event.preventDefault(); //stop refresh of page
     $('#carousel-example-generic').hide();
     $('#carousel').hide();
-    $('#tableRank').hide();
-    $('#row4').hide();
+    $('#gameStats').hide();
+    $('#tableStats').hide();
     $('#contentHeader').empty();
     $('#contentHeader').html("<h1>Search Results</h1>");
 	$('#searchContent').empty(); //clear div of old content.
-	event.preventDefault(); //stop refresh of page
 	$('#searchPanel').show();
 	$('#searchContent').show();
 	searchOptions = $('#userInput').val().trim();
