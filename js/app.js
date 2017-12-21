@@ -106,7 +106,7 @@ var rankingLists = {
 
                 //checks to see if there is a video
                 if ('videos' in data[i]) {
-                	console.log(data[i]);
+                	// console.log(dsata[i]);
                 	videoExt = data[i].videos[0].video_id;
 
 	                if (i == 0) {
@@ -145,15 +145,18 @@ var rankingLists = {
             console.log(data);
             console.log(data.articles[0].author);
             var searchResult = $('<div>');
+            
             for (var i = 0; i < data.articles.length; i++) {
                         
                 var searchReturn = $('<p>');
+                var articleLink = $('<a>')
                 //genre, aggregated rating, preview, name
-                searchReturn.html('Title: ' + data.articles[i].title + '<br/>' +
-                                  'Author: ' + data.articles[i].author + '<br/>' +
+                articleLink.attr('href', data.articles[i].url)
+                articleLink.text(data.articles[i].title);
+                searchReturn.html(articleLink);
+                searchReturn.append('Author: ' + data.articles[i].author + '<br/>' +
                                   'Description: ' + data.articles[i].description );
-
-
+                searchResult.append(articleLink);
                 searchResult.append(searchReturn);
                 console.log("news");
                 }
