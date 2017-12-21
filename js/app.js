@@ -86,14 +86,6 @@ var rankingLists = {
                 var videoExt = "";
                 var videoSummary = "";
 
-                //adds 0 to front of date for formating purposes
-                // if (day < 10) {
-                // 	day = 0 + day;
-                // }
-
-                // if (month < 10) {
-                // 	month = 0 + month;
-                // }
                 var newDateFormat = [month, day, year].join('/');
 
 
@@ -132,17 +124,13 @@ var rankingLists = {
 	                videoLink.attr('width', '840px');
 	                videoLink.attr('height', '422px');
 	                videoLink.attr('src', 'https://www.youtube.com/embed/'+ videoExt);
-                    // videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
-                    //             + "Summary: " + data[i].summary; 
 
 	                videoDiv.append(videoLink);
-                    // videoDiv.append(videoSummary);
-                    // console.log(data[i].summary);
 
 	                $('#carousel').prepend(videoDiv);
 
-		          	}
-		          }
+		        }
+		    }
 	        
 		    // console.log(data);
 		});
@@ -178,43 +166,8 @@ var rankingLists = {
                 searchResult.append(articleLink);
                 searchResult.append(searchReturn);
                 console.log("news");
-                }
+            }
             $('#articles').append(searchResult);
         })
     }
 };
-
-//below function handles Enter keystroke
-
-
-
-
-
-
-//this is a comment
-
-// $(document).ready(function() {
-
-// 	$('#searchContent').hide();
-
-// 	$('#submitUserData').on('click', function(event){
-// 		$('#searchContent').empty(); //clear div of old content.
-// 	    event.preventDefault(); //stop refresh of page
-// 	    search = $('#userInput').val().trim();
-// 	    // var searchReturn = '<p>' + search + '</p>';
-// 	    $('#searchContent').slideDown(500);
-// 	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&limit=1" +"&api_key=dc6zaTOxFJmzC";//The API Key.
-//      	$.ajax({url: queryURL, method: 'GET'})
-//           .done(function(response) {
-//           	for (var i = 0; i < response.data.length; i++) {
-//           			var searchResult = $('<div>');
-//                     var searchReturn = $('<p>');
-//                     searchReturn.html('Title: ' + response.data[i].title + '<br/>' +
-//                     				  'Rating: ' + response.data[i].rating + '<br/>' +
-//                     				  '<img src=' + response.data[i].images.downsized_still.url);
-//                     searchResult.append(searchReturn);
-//           	}
-//           	$('#searchContent').append(searchResult);
-//           });
-//     });
-// }); 

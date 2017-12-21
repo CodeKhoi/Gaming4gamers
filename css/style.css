@@ -84,7 +84,7 @@ ul li a{
 }
 
 #invaderImg {
-	height: 575px;
+	height: 535px;
 	width: 100%;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 	margin-bottom: 25px
@@ -194,5 +194,6 @@ th {
 
 #articlePanel {
 	margin-top: 25px;
+	height: 100%;
 }
 

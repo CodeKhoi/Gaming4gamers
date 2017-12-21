@@ -7,13 +7,13 @@ var config = {
     projectId: "proje-920bd",
     storageBucket: "proje-920bd.appspot.com",
     messagingSenderId: "105509487976"
-  };
+};
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
 var databaseUserRef = database.ref('/users');
-console.log(databaseUserRef);
+// console.log(databaseUserRef);
 
 
 $("#signUpSubmit").on("click", function (event) {
@@ -35,9 +35,9 @@ $("#signUpSubmit").on("click", function (event) {
 
   function validate() {
     if (validateEmail(email)) {
-      alert("email is valid :)");
+      // alert("email is valid :)");
       if (pword === cpword) {
-        alert("password is valid :)");
+        // alert("password is valid :)");
 
 
         var newPerson = {
@@ -53,7 +53,7 @@ $("#signUpSubmit").on("click", function (event) {
         sessionStorage.clear();
 
         databaseUserRef.on('value', function (snapshot) {
-          console.log(snapshot.val())
+          // console.log(snapshot.val())
 
         });
 
@@ -71,7 +71,7 @@ $("#signUpSubmit").on("click", function (event) {
         databaseSessionRef.set(sessionDetail);
 
         databaseSessionRef.on('value', function (snapshot) {
-          console.log(snapshot.val())
+          // console.log(snapshot.val())
 
         });
 
@@ -86,10 +86,10 @@ $("#signUpSubmit").on("click", function (event) {
         window.location.href='../html/index.html' // this totaly works comment back in after done with testing
 
       } else {
-        alert("password is NOT valid :)");
+        // alert("password is NOT valid :)");
       }
     } else {
-      alert("email is NOT valid :)");
+      // alert("email is NOT valid :)");
     }
     return false;
   }
@@ -113,7 +113,7 @@ $("#signInSubmit").on("click", function (event) {
     snapshot.forEach(function (childSnapshot) {
       var childVal = childSnapshot.val()
       if (childVal.uname == unameSignIn && childVal.pword === pwordSignIn) {
-        console.log("hey you found me");
+        // console.log("hey you found me");
         var uuid4 = UUIDjs.create();
         var sessionId = uuid4.toString();
         var databaseSessionRef = database.ref('/sessions/' + sessionId);

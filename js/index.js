@@ -24,7 +24,7 @@ var sessionDetail = {
   activeAt: sessionStorage.getItem("loginAt")
 
 };
-console.log(sessionDetail)
+// console.log(sessionDetail)
 
 //get user from database
 database.ref('/sessions/' + sessionDetail.sessionId).once('value').then(function(snapshot) {
