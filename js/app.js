@@ -14,6 +14,8 @@ $('#submit').on('click', function(event) {
 	$('#searchContent').empty(); //clear div of old content.
 	$('#searchPanel').show();
 	$('#searchContent').show();
+    $('#articles').hide();
+    $('#rowSix').hide();
 	searchOptions = $('#userInput').val().trim();
 	// console.log(searchOptions);
 	$.ajax({
@@ -24,14 +26,18 @@ $('#submit').on('click', function(event) {
 	    for (var i in data) {
           			
                     var searchReturn = $('<p>');
+                    var searchLink = $('<a>');
+
+                    searchLink.attr('href', data[i].url)
+                    searchLink.text(data[i].name);
                     //genre, aggregated rating, preview, name
-                    searchReturn.html('Title: ' + data[i].name + '<br/>' +
-                                      'Genre: ' + data[i].genres + '<br/>' + 
+                    searchReturn.html(searchLink);
+                    searchReturn.append('Genre: ' + data[i].genres + '<br/>' + 
                     				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' + '<hr>' +
                     				  'Summary: ' + data[i].summary + '<br/>' + '<br/>' +
                     				  'More info: ' + data[i].url + '<br/>' + '<hr>');
 
-
+                    searchResult.append(searchLink);
                     searchResult.append(searchReturn);
           	}
         $('#searchContent').append(searchResult);
@@ -146,15 +152,20 @@ var rankingLists = {
             console.log(data.articles[0].author);
             var searchResult = $('<div>');
             
-            for (var i = 0; i < data.articles.length; i++) {
+            for (var i = 0; i < 5; i++) {
                         
                 var searchReturn = $('<p>');
                 var articleLink = $('<a>')
+                var authorName = data.articles[i].author;
+
+                if(authorName == null) {
+                    authorName = "";
+                }
                 //genre, aggregated rating, preview, name
                 articleLink.attr('href', data.articles[i].url)
                 articleLink.text(data.articles[i].title);
                 searchReturn.html(articleLink);
-                searchReturn.append('Author: ' + data.articles[i].author + '<br/>' +
+                searchReturn.append('Author: ' + authorName + '<br/>' +
                                   'Description: ' + data.articles[i].description );
                 searchResult.append(articleLink);
                 searchResult.append(searchReturn);
