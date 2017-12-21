@@ -11,6 +11,7 @@ $('#submit').on('click', function(event) {
     $('#gameStats').hide();
     $('#tableStats').hide();
     $('#articlePanel').hide();
+    $('#spacePanel').hide();
     $('#contentHeader').empty();
 	$('#searchContent').empty(); //clear div of old content.
 	$('#searchPanel').show();
@@ -120,8 +121,8 @@ var rankingLists = {
 	                else {
 	                	videoDiv.attr('class', 'item');
 	                }
-	                videoLink.attr('width', '720px');
-	                videoLink.attr('height', '400px');
+	                videoLink.attr('width', '840px');
+	                videoLink.attr('height', '422px');
 	                videoLink.attr('src', 'https://www.youtube.com/embed/'+ videoExt);
                     // videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
                     //             + "Summary: " + data[i].summary; 

@@ -4,6 +4,11 @@
 	position: relative; /*Sticky footer*/
 }
 
+#signInTab {
+	padding-top: 15px;
+	color: #fff;
+}
+
 #rowTop {
 	background: url(../img/HaloLogin.jpg);
 	height: 700px;
@@ -64,8 +69,23 @@ ul li a{
 	padding-right: 50px;
 }
 
+#carousel {
+	background: #D7CEC7;
+    height: 422px;
+}
+
 #rowThree {
 	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#spacePanel {
+	margin-top: 25px;
+}
+
+#invaderImg {
+	height: 500px;
+	width: 100%;
 }
 
 #tableStats {
@@ -153,5 +173,9 @@ td {
 th {
 	background-color: #76323F;
 	color: #D7CEC7;
+}
+
+#articlePanel {
+	margin-top: 25px;
 }
 
