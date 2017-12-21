@@ -84,8 +84,24 @@ ul li a{
 }
 
 #invaderImg {
-	height: 500px;
+	height: 575px;
 	width: 100%;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	margin-bottom: 25px
+}
+
+.pacman {
+	height: 50px;
+	width: 50px;
+}
+
+.dollsum {
+	height: 100px;
+	width: 100px;
+}
+
+#spaceImg {
+	height: 100%;
 }
 
 #tableStats {
@@ -107,6 +123,7 @@ ul li a{
 .panel-heading {
 	background-color: #76323F!important;
 	border: 3px solid #76323F!important;
+	padding-top: 20px;
 }
 
 #submit {

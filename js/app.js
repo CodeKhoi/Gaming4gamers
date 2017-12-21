@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('#searchPanel').hide();
 	$('#searchContent').hide();
+    $('#spaceImg').hide();
 	rankingLists.ranking2017();	
     rankingLists.gameNews();
 
@@ -47,6 +48,11 @@ $('#submit').on('click', function(event) {
 });
 });
 
+$('#spacePanel').on('click', function(event) {
+    event.preventDefault(); //stop refresh of page
+    $('#spaceImg').show().hide().slideDown(3000);
+});
+
 var gameData = {};
 var searchOptions = "";
 
@@ -81,27 +87,29 @@ var rankingLists = {
                 var videoSummary = "";
 
                 //adds 0 to front of date for formating purposes
-                if (day < 10) {
-                	day = 0 + day;
-                }
+                // if (day < 10) {
+                // 	day = 0 + day;
+                // }
 
-                if (month < 10) {
-                	month = 0 + month;
-                }
-                var newDateFormat = [year, month, day].join('-');
+                // if (month < 10) {
+                // 	month = 0 + month;
+                // }
+                var newDateFormat = [month, day, year].join('/');
 
 
                 //populates table
-                searchReturn.html(data[i].aggregated_rating.toFixed(2));
-                searchReturn4.html(data[i].total_rating.toFixed(2));
                 searchReturn2.html(data[i].name);
+                searchReturn.html(data[i].aggregated_rating.toFixed(2));
+                searchReturn4.html(data[i].genres);
                 searchReturn3.html(newDateFormat);
-                 // + '<br/>' + 'Rating: ' + data[i].total_rating + '<br/>');
-                				  // '<img src=' + data.i.images.downsized_still.url);
-                
+       
+                //name
                 searchResult.append(searchReturn2);
+                //rating
                 searchResult.append(searchReturn);
+                //genres
                 searchResult.append(searchReturn4);
+                //release date
                 searchResult.append(searchReturn3);
                 
                 $('#ranking').prepend(searchResult);
@@ -112,7 +120,7 @@ var rankingLists = {
 
                 //checks to see if there is a video
                 if ('videos' in data[i]) {
-                	// console.log(dsata[i]);
+                	// console.log(data[i]);
                 	videoExt = data[i].videos[0].video_id;
 
 	                if (i == 0) {
