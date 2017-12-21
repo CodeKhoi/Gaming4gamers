@@ -2,6 +2,7 @@ $(document).ready(function() {
 	$('#searchPanel').hide();
 	$('#searchContent').hide();
 	rankingLists.ranking2017();	
+    rankingLists.gameNews();
 
 $('#submit').on('click', function(event) {
     event.preventDefault(); //stop refresh of page
@@ -14,7 +15,7 @@ $('#submit').on('click', function(event) {
 	$('#searchPanel').show();
 	$('#searchContent').show();
 	searchOptions = $('#userInput').val().trim();
-	console.log(searchOptions);
+	// console.log(searchOptions);
 	$.ajax({
 	    url: 'http://localhost:3000/search',
 	    data: {search: searchOptions},
@@ -34,7 +35,7 @@ $('#submit').on('click', function(event) {
                     searchResult.append(searchReturn);
           	}
         $('#searchContent').append(searchResult);
-	    console.log(data);
+	    // console.log(data);
 	});
 
 });
@@ -52,7 +53,7 @@ var rankingLists = {
 		    // data: {search: searchOptions},
 		}).done(function(data) {
 		    // console.log('data', data);
-		    console.log(data);
+		    // console.log(data);
 		    
 		    for (var i in data) {
 
@@ -98,7 +99,7 @@ var rankingLists = {
                 searchResult.append(searchReturn3);
                 
                 $('#ranking').append(searchResult);
-                console.log("next to videos");
+                // console.log("next to videos");
 
 
                 //=====populates carousel
@@ -122,16 +123,43 @@ var rankingLists = {
 
 	                videoDiv.append(videoLink);
                     videoDiv.append(videoSummary);
-                    console.log(data[i].summary);
+                    // console.log(data[i].summary);
 
 	                $('#carousel').prepend(videoDiv);
 
 		          	}
 		          }
 	        
-		    console.log(data);
+		    // console.log(data);
 		});
-	}
+	},
+    
+    gameNews: function() {
+        $('#articles').empty();
+            $.ajax({
+            url: 'https://newsapi.org/v2/top-headlines?sources=ign&apiKey=f9ddfdc3789e4e5e907490122f0108be'
+            // data: {search: searchOptions},
+        }).done(function(data) {
+            // console.log('data', data);
+            console.log("game news");
+            console.log(data);
+            console.log(data.articles[0].author);
+            var searchResult = $('<div>');
+            for (var i = 0; i < data.articles.length; i++) {
+                        
+                var searchReturn = $('<p>');
+                //genre, aggregated rating, preview, name
+                searchReturn.html('Title: ' + data.articles[i].title + '<br/>' +
+                                  'Author: ' + data.articles[i].author + '<br/>' +
+                                  'Description: ' + data.articles[i].description );
+
+
+                searchResult.append(searchReturn);
+                console.log("news");
+                }
+            $('#articles').append(searchResult);
+        })
+    }
 };
 
 //below function handles Enter keystroke
