@@ -53,12 +53,24 @@ $("#signUpSubmit").on("click", function (event) {
         sessionStorage.clear();
 
         databaseUserRef.on('value', function (snapshot) {
-          // console.log(snapshot.val())
-
+          console.log(snapshot.val())
+          // var snap = snapshot.val()
+          // for (var key in snap) {
+          //     console.log(key)
+          //     if(snap[key] == sessionStorage.getItem("username")){
+          //         console.log(snap[key])
+          //     }
+          // }
         });
 
+        //
+        // database.ref('/sessions/' + newPerson.uname).once('value').then(function(snapshot) {
+        //   var username = (snapshot.val() && snapshot.val().uname) || 'Anonymous';
+        //   console.log('User: ' + username)
+        // });
+
         var uuid4 = UUIDjs.create();
-        // console.log('SessionId: ' + uuid4.toString());
+        console.log('SessionId: ' + uuid4.toString());
         var sessionId = uuid4.toString();
 
         var databaseSessionRef = database.ref('/sessions/' + sessionId);
