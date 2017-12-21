@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 var databaseUserRef = database.ref('/users');
-// console.log(databaseUserRef);
+console.log(databaseUserRef);
 
 
 $("#signUpSubmit").on("click", function (event) {
@@ -26,7 +26,7 @@ $("#signUpSubmit").on("click", function (event) {
   var uname = $("#username").val().trim();
   var pword = $("#signUpPassword").val().trim();
   var cpword = $("#confirmPassword").val().trim();
-  // console.log(email, name, pword);
+  console.log(email, name, pword);
 
   function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -54,20 +54,9 @@ $("#signUpSubmit").on("click", function (event) {
 
         databaseUserRef.on('value', function (snapshot) {
           console.log(snapshot.val())
-          // var snap = snapshot.val()
-          // for (var key in snap) {
-          //     console.log(key)
-          //     if(snap[key] == sessionStorage.getItem("username")){
-          //         console.log(snap[key])
-          //     }
-          // }
+
         });
 
-        //
-        // database.ref('/sessions/' + newPerson.uname).once('value').then(function(snapshot) {
-        //   var username = (snapshot.val() && snapshot.val().uname) || 'Anonymous';
-        //   console.log('User: ' + username)
-        // });
 
         var uuid4 = UUIDjs.create();
         console.log('SessionId: ' + uuid4.toString());
@@ -82,7 +71,7 @@ $("#signUpSubmit").on("click", function (event) {
         databaseSessionRef.set(sessionDetail);
 
         databaseSessionRef.on('value', function (snapshot) {
-          // console.log(snapshot.val())
+          console.log(snapshot.val())
 
         });
 
@@ -92,7 +81,7 @@ $("#signUpSubmit").on("click", function (event) {
 
 
         var databaseSessionRef = database.ref('/session');
-        // console.log(databaseSessionRef);
+        console.log(databaseSessionRef);
 
         window.location.href='../html/index.html' // this totaly works comment back in after done with testing
 
@@ -120,11 +109,11 @@ $("#signInSubmit").on("click", function (event) {
 
   //get user from database
   database.ref('/users/').once('value').then(function(snapshot) {
-    // console.log(snapshot.val());
+    console.log(snapshot.val());
     snapshot.forEach(function (childSnapshot) {
       var childVal = childSnapshot.val()
       if (childVal.uname == unameSignIn && childVal.pword === pwordSignIn) {
-        // console.log("hey you found me");
+        console.log("hey you found me");
         var uuid4 = UUIDjs.create();
         var sessionId = uuid4.toString();
         var databaseSessionRef = database.ref('/sessions/' + sessionId);
@@ -136,10 +125,10 @@ $("#signInSubmit").on("click", function (event) {
         databaseSessionRef.set(sessionDetail);
         sessionStorage.setItem("sessionId", sessionId);
         sessionStorage.setItem("username", unameSignIn.toString());
-        window.location.href = '../html/index.html'
+        window.location.href = '../html/index.html';
       }
 
     })
-  /
+
   })
 });

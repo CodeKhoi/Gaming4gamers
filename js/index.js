@@ -14,6 +14,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
+
 var databaseSessionRef = database.ref('/sessions/' + sessionId);
 
 //grabs user info from local session format obj to send into firebase
@@ -23,7 +24,7 @@ var sessionDetail = {
   activeAt: sessionStorage.getItem("loginAt")
 
 };
-// console.log(sessionDetail)
+console.log(sessionDetail)
 
 //get user from database
 database.ref('/sessions/' + sessionDetail.sessionId).once('value').then(function(snapshot) {
@@ -31,19 +32,19 @@ database.ref('/sessions/' + sessionDetail.sessionId).once('value').then(function
   var logedUser = (snapshot.val()) || 'Anonymous';
 
   if(logedUser.uname != 'Anonymous'){
-    // console.log('THis is the username from the session database ', logedUser);
-    // console.log(logedUser)
+    console.log('THis is the username from the session database ', logedUser);
+    console.log(logedUser)
     //get the time from firebase and covert it into local time
     var covertedTime = new Date(parseInt(logedUser.activeAt)).toLocaleString();
     //this si the converted time
-    // console.log(covertedTime)
+    console.log(covertedTime)
     var start = new Date(parseInt(logedUser.activeAt));
-    // console.log(start)
+    console.log(start)
     // the event to time goes here:
     var end = new Date();
 
     var elapsed = end - start;
-    // console.log(elapsed);
+    console.log(elapsed);
     if(elapsed > 3600000){
       sessionStorage.clear();
       database.ref.remove('/sessions/' + sessionDetail.sessionId);

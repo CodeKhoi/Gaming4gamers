@@ -86,7 +86,7 @@ var rankingLists = {
 
                 //populates table
                 searchReturn.html(data[i].aggregated_rating.toFixed(2));
-                searchReturn4.html(data[i].total_platforms.name);
+                searchReturn4.html(data[i].total_rating.toFixed(2));
                 searchReturn2.html(data[i].name);
                 searchReturn3.html(newDateFormat);
                  // + '<br/>' + 'Rating: ' + data[i].total_rating + '<br/>');
