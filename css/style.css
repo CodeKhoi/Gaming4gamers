@@ -4,6 +4,12 @@
 	position: relative; /*Sticky footer*/
 }
 
+#signInTab {
+	/*margin-top: 10px;*/
+	padding-top: 15px;
+	color: #fff;
+}
+
 #rowTop {
 	background: url(../img/HaloLogin.jpg);
 	height: 700px;
