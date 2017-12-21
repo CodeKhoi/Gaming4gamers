@@ -19,7 +19,7 @@ app.get('/search', function (req, res) {
     client.games({
         fields: ['name', 'summary', 'storyline', 'total_rating', 'aggregated_rating', 
         'first_release_date', 'release_dates.date', 'popularity', 'url', 'category', 
-        'screenshots', 'videos.video_id', 'genres', 'platforms.name', 'platforms.slug'], // Return all fields
+        'screenshots', 'videos.video_id', 'genres'], // Return all fields
         limit: 10, // Limit to 5 results
         scroll: 1, // Index offset for results
         // search: 'zelda',
@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
 
     client.games({
         fields: ['summary', 'storyline', 'name', 'total_rating', 'aggregated_rating', 'first_release_date', 
-        'release_dates.date', 'videos.video_id', 'genres', 'platforms.name', 'platforms.slug'], // Return all fields
+        'release_dates.date', 'videos.video_id', 'genres'], // Return all fields
         limit: 10, // Limit to 5 results
         offset: 15, // Index offset for results
         // search: 'zelda',
