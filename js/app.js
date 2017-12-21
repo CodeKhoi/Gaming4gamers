@@ -10,6 +10,7 @@ $('#submit').on('click', function(event) {
     $('#carousel').hide();
     $('#gameStats').hide();
     $('#tableStats').hide();
+    $('#articlePanel').hide();
     $('#contentHeader').empty();
 	$('#searchContent').empty(); //clear div of old content.
 	$('#searchPanel').show();
@@ -30,12 +31,10 @@ $('#submit').on('click', function(event) {
 
                     searchLink.attr('href', data[i].url)
                     searchLink.text(data[i].name);
-                    //genre, aggregated rating, preview, name
                     searchReturn.html(searchLink);
-                    searchReturn.append('Genre: ' + data[i].genres + '<br/>' + 
-                    				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' + '<hr>' +
-                    				  'Summary: ' + data[i].summary + '<br/>' + '<br/>' +
-                    				  'More info: ' + data[i].url + '<br/>' + '<hr>');
+                    searchReturn.append('<hr>' + 'Genre: ' + data[i].genres + '<br/>' + 
+                    				  'Rating: ' + data[i].aggregated_rating.toFixed(2) + '<br/>' +
+                    				  'Summary: ' + data[i].summary + '<br/>' + '<hr>');
 
                     searchResult.append(searchLink);
                     searchResult.append(searchReturn);
@@ -104,7 +103,7 @@ var rankingLists = {
                 searchResult.append(searchReturn4);
                 searchResult.append(searchReturn3);
                 
-                $('#ranking').append(searchResult);
+                $('#ranking').prepend(searchResult);
                 // console.log("next to videos");
 
 
@@ -124,11 +123,11 @@ var rankingLists = {
 	                videoLink.attr('width', '720px');
 	                videoLink.attr('height', '400px');
 	                videoLink.attr('src', 'https://www.youtube.com/embed/'+ videoExt);
-                    videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
-                                + "Summary: " + data[i].summary; 
+                    // videoSummary = "<h2>" + data[i].name + "</h2>" + "</br>"
+                    //             + "Summary: " + data[i].summary; 
 
 	                videoDiv.append(videoLink);
-                    videoDiv.append(videoSummary);
+                    // videoDiv.append(videoSummary);
                     // console.log(data[i].summary);
 
 	                $('#carousel').prepend(videoDiv);
@@ -165,8 +164,8 @@ var rankingLists = {
                 articleLink.attr('href', data.articles[i].url)
                 articleLink.text(data.articles[i].title);
                 searchReturn.html(articleLink);
-                searchReturn.append('Author: ' + authorName + '<br/>' +
-                                  'Description: ' + data.articles[i].description );
+                searchReturn.append('<hr>' + 'Author: ' + authorName + '<br/>' +
+                                  'Description: ' + data.articles[i].description + '<hr>');
                 searchResult.append(articleLink);
                 searchResult.append(searchReturn);
                 console.log("news");
